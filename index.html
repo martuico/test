@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="loginController">
+		<div class="page-header">
+			<h1>Logging <small>{{currentTime}}</small></h1>
+			<div class="row">
+				<div class="col-md-3">
+					<button class="btn btn-info" ng-click="add()">Add Time</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-7">
+			<div class="form-inline clockinout" ng-repeat="data in datas" style="margin-top:5px;margin-bottom:5px;">
+			  <div class="form-group">
+			    <input type="text" ng-model="data.login" class="form-control" id="exampleInputName2" placeholder="Time in" data-mask="99:99">
+			  </div>
+			  <div class="form-group">
+			    <input type="text" ng-model="data.logout" class="form-control" id="exampleInputEmail2" placeholder="Time out" data-mask="99:99">
+			  </div>
+			  <button type="submit" class="btn btn-success" ng-click="store(data)"><i class="fa fa-check"></i></button>
+			  <button type="submit" class="btn btn-danger" ng-click="remove(data,$index)"><i class="fa fa-trash"></i></button>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
+	<!--script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+	<script src="moment.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="custom.js"></script>
+	<script src="app.js"></script>
+
+</body>
+</html>
